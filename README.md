@@ -1,2 +1,2 @@
-# PhytoOracle
+# **PhytoOracle**
 PhytoOracle is a scalable, modular data pipeline that aims to improve data processing for phenomics research. It refines the TERRA-REF AgPipeline by using CCTools' Makeflow and WorkQueue frameworks for distributed task management. The program is available as Docker/Singularity containers that can run on either local, cloud, or high-performance computing (HPC) platforms. PhytoOracle makes it easy to swap between available extractors (link) or to integrate new extracotrs depending on the research needs. As a result, PhytoOracle significantly reduces data processing time, thereby enabling faster leveraging of biological insight from the data.
