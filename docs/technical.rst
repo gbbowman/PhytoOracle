@@ -7,7 +7,7 @@ Integrating new extractors
 The Makeflow file allows for easy integration of new extractors. Please 
 
 .. note:: 
-   This is a note directive. Take a look at the plug-play example. Make sure that you indent 3 spaces (very important). 
+   This is a note directive. Make sure that you indent 3 spaces (very important). 
 
 .. code::
    This is how code is integrated. Again 3 spaces. 
