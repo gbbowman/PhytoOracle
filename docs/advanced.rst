@@ -1,5 +1,6 @@
 Advanced User Manual
 ====================
+.. Contents::
 
 Who is this tutorial for?
 -------------------------
