@@ -1,6 +1,8 @@
 Advanced User Manual
 ====================
 
+.. Contents::
+
 Who is this tutorial for?
 -------------------------
 This tutorial is meant for users who will be swapping between available extractors or integrating new ones. It will provide in-depth instructions into changing the workflow files and ....
