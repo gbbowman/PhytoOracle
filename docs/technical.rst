@@ -23,16 +23,18 @@ The Makeflow file allows for easy integration of new extractors. Please
 
 Stereotop Benchmarking workflow
 -------------------------------
+* Get Jetstream account ask Eric if you don’t yet have one ASAP
 
--Get Jetstream account ask Eric if you don’t yet have one ASAP
+* Launch Base Ubuntu image on jetstream
+* Setup 
 
-## Launch Base Ubuntu image on jetstream
-## Setup 
+.. code::
+
 sudo apt-get update #update references to packages to install latest
 sudo apt-get upgrade -y # update all currently installed packages
 ```sudo apt-get install -y sysstat git ruby ruby-dev wget python-dev swig zlib1g-dev build-essential perl libperl-dev singularity-container``` ## Install all required dependencies for cctool and what we need
 
-## Download data
+* Download data
 iinit    # initialize irods with your account 
 {
     "irods_host": "data.cyverse.org",
@@ -43,7 +45,10 @@ iinit    # initialize irods with your account
 
 https://ua-acic.slack.com/files/UMEP6F4AE/FQWAM5F1R/image.png
 
-## Stage data
+* Stage data
+
+.. code::
+
 sudo mkdir /Data #make dir for the data
 sudo chown username /Data # Makes your user own directory 
 irsync -vs i:/iplant/home/raptorslab/stereoTop.tar.gz /Data/stereoTop.tar.gz ##sync data from cyverse to local machine 
@@ -51,46 +56,45 @@ cd /Data
 tar xvzf stereoTop.tar.gz  #extract directory should have stereotop.tar.gz and dir 2018-05-18
 chown -R username 2018-05-15 # Makes your user own directory 
 chmod -R 775 /Data # Change permissions
-
 (rm -f stereoTop.tar.gz)   # maybe if you want #optional remove tarball to save time don’t need to run this
 
 
-## Install cctools
-```git clone git://github.com/cooperative-computing-lab/cctools.git cctools-github-src
+* Install cctools
+.. code::
+git clone git://github.com/cooperative-computing-lab/cctools.git cctools-github-src
 cd cctools-github-src``` #get latest cctools from github
 ./configure --prefix /opt/cctools #if no errors your good
 make 
 sudo make install #copies binaries to desired location
 sudo cp /opt/cctools/bin/* /usr/local/bin/ #copy binaries to desired location *make sure this works
 
-## Run Workqueue ##
+* Run Workqueue
 nohup bash checkFinal.bsh & #will run workqueue (can now close your laptop)
 
 //old?
 (nohup work_queue_factory 129.114.104.40 9123 -t 9999999 --cores=1 -w 45 &)
 //
 
-## Killing workqueue processes (after it’s run) ##
+* Killing workqueue processes (after it’s run) ##
 pkill work_queue_factory
 ps ax | grep work
 kill -9 (pids from previous command)
 
 
-## Benchmark Script
+* Benchmark Script
 
 https://ua-acic.slack.com/files/UMS6Z7FEC/FR4U0FVNX/checkfinal.bsh
 
 This creates 3 output files that we can aggregate and use GNUplot to display in the final presentation.
 
-
-## MVP
+* MVP
 
 Benchmark each extractor individually
 
 
 
 //old 
-# Launch cctools image (as large as possible 44core last one) on jetstream (or atmosphere?)
+* Launch cctools image (as large as possible 44core last one) on jetstream (or atmosphere?)
 https://github.com/uacic/starTerra/tree/master/stereoTop
 https://jxuzy.blogspot.com/2019/11/install-cctools-ubuntu-1804lts.html
 //
