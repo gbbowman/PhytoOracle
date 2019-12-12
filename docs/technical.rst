@@ -7,17 +7,12 @@ Integrating new extractors
 The Makeflow file allows for easy integration of new extractors. Please 
 
 .. note:: 
+   
    This is a note directive. Make sure that you indent 3 spaces (very important). 
 
 .. code::
+   
    This is how code is integrated. Again 3 spaces. 
-
-+------------+------------+----------+
-| Header 1   | Header 2   | Header 3 |
-+============+============+==========+
-| body row 1 | column 1   | column 2 |
-+------------+------------+----------+ 
-
 
 
 
@@ -32,7 +27,7 @@ Stereotop Benchmarking workflow
 
 sudo apt-get update #update references to packages to install latest
 sudo apt-get upgrade -y # update all currently installed packages
-```sudo apt-get install -y sysstat git ruby ruby-dev wget python-dev swig zlib1g-dev build-essential perl libperl-dev singularity-container``` ## Install all required dependencies for cctool and what we need
+sudo apt-get install -y sysstat git ruby ruby-dev wget python-dev swig zlib1g-dev build-essential perl libperl-dev singularity-container ## Install all required dependencies for cctool and what we need
 
 * Download data
 iinit    # initialize irods with your account 
@@ -127,16 +122,6 @@ bash entrypoint.bsh -c
 rm nohup.out
 
 # run these tests upto 40
-
-
-
-
-
-
-
-
-
-
 
 Benchmarking Results
 
