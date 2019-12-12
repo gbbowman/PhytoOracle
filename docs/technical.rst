@@ -1,7 +1,7 @@
 Technical User Manual
 =====================
 
-test
+
 Integrating new extractors
 --------------------------
 The Makeflow file allows for easy integration of new extractors. Please 
@@ -24,7 +24,7 @@ The Makeflow file allows for easy integration of new extractors. Please
 Stereotop Benchmarking workflow
 -------------------------------
 
-## Get Jetstream account ask Eric if you don’t yet have one ASAP
+-Get Jetstream account ask Eric if you don’t yet have one ASAP
 
 ## Launch Base Ubuntu image on jetstream
 ## Setup 
