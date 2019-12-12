@@ -17,19 +17,21 @@ Stereotop Benchmarking workflow
 * Setup 
 
 .. code::
-
-sudo apt-get update (update references to packages to install latest)
-sudo apt-get upgrade -y (update all currently installed packages)
-sudo apt-get install -y sysstat git ruby ruby-dev wget python-dev swig zlib1g-dev build-essential perl libperl-dev singularity-container (Install all required dependencies for cctool and what we need)
+   
+   sudo apt-get update #update references to packages to install latest
+   sudo apt-get upgrade -y #update all currently installed packages
+   sudo apt-get install -y sysstat git ruby ruby-dev wget python-dev swig zlib1g-dev build-essential perl libperl-dev singularity-  container #Install all required dependencies for cctool and what we need
 
 * Download data
-iinit    # initialize irods with your account 
-{
-    "irods_host": "data.cyverse.org",
-    "irods_port": 1247,
-    "irods_user_name": "username",
-    "irods_zone_name": "iplant"
-}
+.. code::
+
+   iinit    # initialize irods with your account 
+   
+   "irods_host": "data.cyverse.org",
+   "irods_port": 1247,
+   "irods_user_name": "username",
+   "irods_zone_name": "iplant"
+
 
 https://ua-acic.slack.com/files/UMEP6F4AE/FQWAM5F1R/image.png
 
@@ -37,37 +39,40 @@ https://ua-acic.slack.com/files/UMEP6F4AE/FQWAM5F1R/image.png
 
 .. code::
 
-sudo mkdir /Data #make dir for the data
-sudo chown username /Data # Makes your user own directory 
-irsync -vs i:/iplant/home/raptorslab/stereoTop.tar.gz /Data/stereoTop.tar.gz ##sync data from cyverse to local machine 
-cd /Data
-tar xvzf stereoTop.tar.gz  #extract directory should have stereotop.tar.gz and dir 2018-05-18
-chown -R username 2018-05-15 # Makes your user own directory 
-chmod -R 775 /Data # Change permissions
-(rm -f stereoTop.tar.gz)   # maybe if you want #optional remove tarball to save time don’t need to run this
+   sudo mkdir /Data #make dir for the data
+   sudo chown username /Data #Makes your user own directory 
+   irsync -vs i:/iplant/home/raptorslab/stereoTop.tar.gz /Data/stereoTop.tar.gz ##sync data from cyverse to local machine 
+   cd /Data
+   tar xvzf stereoTop.tar.gz  #extract directory should have stereotop.tar.gz and dir 2018-05-18
+   chown -R username 2018-05-15 # Makes your user own directory 
+   chmod -R 775 /Data # Change permissions
+   (rm -f stereoTop.tar.gz)   # maybe if you want #optional remove tarball to save time don’t need to run this
 
 
 * Install cctools
+
 .. code::
 
-git clone git://github.com/cooperative-computing-lab/cctools.git cctools-github-src
-cd cctools-github-src (get latest cctools from github)
-./configure --prefix /opt/cctools (if no errors your good)
-make 
-sudo make install (copies binaries to desired location)
-sudo cp /opt/cctools/bin/* /usr/local/bin/ (copy binaries to desired location, make sure this works)
+   git clone git://github.com/cooperative-computing-lab/cctools.git cctools-github-src
+   cd cctools-github-src #get latest cctools from github
+   ./configure --prefix /opt/cctools #if no errors, you're good
+   make 
+   sudo make install (copies binaries to desired location)
+   sudo cp /opt/cctools/bin/* /usr/local/bin/ (copy binaries to desired location, make sure this works)
 
 * Run Workqueue
-nohup bash checkFinal.bsh & #will run workqueue (can now close your laptop)
-
-//old?
-(nohup work_queue_factory 129.114.104.40 9123 -t 9999999 --cores=1 -w 45 &)
-//
+.. code::
+   
+   nohup bash checkFinal.bsh & #will run workqueue (can now close your laptop)
+   old? (nohup work_queue_factory 129.114.104.40 9123 -t 9999999 --cores=1 -w 45 &)
 
 * Killing workqueue processes (after it’s run) ##
-pkill work_queue_factory
-ps ax | grep work
-kill -9 (pids from previous command)
+
+.. code::
+
+   pkill work_queue_factory
+   ps ax | grep work
+   kill -9 (pids from previous command)
 
 
 * Benchmark Script
