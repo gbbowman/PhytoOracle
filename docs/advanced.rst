@@ -12,9 +12,11 @@ PhytoOracle is a scalable, modular data pipeline that reduces processing times. 
 
 Getting started
 ---------------
-If you need help running the pipeline, please check out our Plug-Play tutorial https://github.com/emmanuelgonz/PhytoOracle/blob/master/docs/plug-play.rst 
+If you need help running the pipeline, please check out our Plug-Play tutorial:
+
+https://github.com/emmanuelgonz/PhytoOracle/blob/master/docs/plug-play.rst 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Swapping extractors
 -------------------
-Fancy lingo here to discuss what types of extractors can be used. 
+Fancy lingo here to discuss what types of extractors can be used? 
