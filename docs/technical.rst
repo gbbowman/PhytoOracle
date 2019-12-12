@@ -51,11 +51,11 @@ chmod -R 775 /Data # Change permissions
 .. code::
 
 git clone git://github.com/cooperative-computing-lab/cctools.git cctools-github-src
-cd cctools-github-src``` #get latest cctools from github
-./configure --prefix /opt/cctools #if no errors your good
+cd cctools-github-src (get latest cctools from github)
+./configure --prefix /opt/cctools (if no errors your good)
 make 
-sudo make install #copies binaries to desired location
-sudo cp /opt/cctools/bin/* /usr/local/bin/ #copy binaries to desired location *make sure this works
+sudo make install (copies binaries to desired location)
+sudo cp /opt/cctools/bin/* /usr/local/bin/ (copy binaries to desired location, make sure this works)
 
 * Run Workqueue
 nohup bash checkFinal.bsh & #will run workqueue (can now close your laptop)
